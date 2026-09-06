@@ -1,17 +1,54 @@
 aid: accelus
 name: Accelus
-description: 'Accelus is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Accelus was a Palm Beach Gardens, Florida medical device company formed in 2021 by the
+  combination of Integrity Implants and Fusion Robotics, built around an "Adaptive Geometry"
+  expandable-implant platform for minimally invasive spine surgery. Its products were the
+  FlareHawk and Toro expandable interbody fusion systems for transforaminal, posterior and
+  lateral lumbar interbody fusion, the LineSider minimally invasive pedicle screw system, and
+  the Remi Robotic Navigation System, a table-mounted intra-operative navigation and robotics
+  platform that guided instrumentation from 2D fluoroscopic or 3D imaging. The company raised
+  roughly $32M from investors including Concord Health Partners, Symbiotic Capital, Eastward
+  Capital Partners and Trog Hawley Capital. It sold the Remi robotic navigation assets to
+  Alphatec Holdings for $55M in April 2023 and its remaining implant products and intellectual
+  property — FlareHawk, Toro and LineSider — to Highridge Medical on 2 September 2025. Accelus
+  sold surgical hardware and single-use implants to hospitals and surgeons, never operated a
+  developer program, and published no public API, SDK, webhook surface or machine-readable
+  specification. Its only host, the WordPress marketing site accelusinc.com, is now a suspended
+  cPanel hosting account that returns an "Account Suspended" page on every path behind a TLS
+  certificate that expired on 2026-05-13, and no accelusinc.com subdomain resolves. This profile
+  is retained as a historical record; there is no API surface to enrich.
 url: https://raw.githubusercontent.com/api-evangelist/accelus/refs/heads/main/apis.yml
+image: https://web.archive.org/web/20241002124548id_/https://accelusinc.com/wp-content/uploads/2021/07/accelus-logo_4c.png
+x-harvest-source-url: https://equityzen.com/company/accelus
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
-x-tier-reason: harvest
+x-tier-reason: defunct-no-api-surface
+x-status: defunct
+x-founded: '2021'
+x-domain-status: suspended
+x-domain-note: >-
+  accelusinc.com is registered to 2027-06-09 and still carries live Microsoft 365 mail DNS,
+  but its web hosting account is SUSPENDED: HTTP 301s to HTTPS, HTTPS 302s every path —
+  including the root, every /.well-known/ path, every spec path and a negative-control path
+  that cannot exist — to https://accelusinc.com/cgi-sys/suspendedpage.cgi, and the Let's
+  Encrypt certificate expired 2026-05-13. It is therefore deliberately NOT wired as a Website
+  pointer. The EquityZen listing this record was harvested from is a trading-venue page, not
+  the company's web presence, and is likewise not wired as a Website pointer (roadmap#56); it
+  is recorded above as x-harvest-source-url. See well-known/accelus-well-known.yml.
 specificationVersion: '0.20'
 created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
+- Medical Devices
+- Medical Technology
+- Healthcare
+- Spine Surgery
+- Surgical Robotics
+- Implants
+- Defunct
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +56,33 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
-- type: Website
-  url: https://equityzen.com/company/accelus
+- type: DomainSecurity
+  url: security/accelus-domain-security.yml
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Accelus Inc. divested its whole product line — Remi robotic navigation to Alphatec in
+    April 2023, the FlareHawk/Toro/LineSider implants to Highridge Medical in September 2025 —
+    and its only host accelusinc.com is now a suspended cPanel account that 302s every path,
+    including the root and a negative-control path, to an "Account Suspended" page behind a
+    TLS certificate that expired 2026-05-13.
+  evidence:
+  - url: https://accelusinc.com/
+    status: 302
+  - url: https://accelusinc.com/cgi-sys/suspendedpage.cgi
+    status: 200
+  - url: https://accelusinc.com/openapi.json
+    status: 302
+  - url: https://accelusinc.com/.well-known/agent-card.json
+    status: 302
+  - url: https://accelusinc.com/.well-known/accelus-negative-control-7f3ab91c.json
+    status: 302
+  - url: https://equityzen.com/company/accelus/
+    status: 200
+  checked: '2026-09-06'
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3

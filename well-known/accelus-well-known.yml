@@ -1,0 +1,118 @@
+generated: '2026-09-06'
+method: probed
+source: https://accelusinc.com/
+name: Accelus well-known + contract discovery probe
+description: >-
+  Negative probe record for Accelus Inc., the Palm Beach Gardens, Florida spine-surgery
+  medical device company. Accelus sold its Remi robotic navigation assets to Alphatec
+  Holdings in April 2023 and its remaining implant products and intellectual property to
+  Highridge Medical on 2 September 2025. Its only web host, accelusinc.com (a WordPress /
+  Elementor marketing site), is now a SUSPENDED cPanel hosting account: every path — the
+  root, every /.well-known/ path, every spec path, and a negative-control path that cannot
+  exist — returns HTTP 302 to https://accelusinc.com/cgi-sys/suspendedpage.cgi, which
+  serves an "Account Suspended" page. The TLS certificate (Let's Encrypt R13,
+  CN=www.accelusinc.com) expired 2026-05-13, so the host cannot be reached over HTTPS
+  without disabling verification. NOTHING was fetched or saved. No WellKnown, SecurityTxt,
+  AgentCard, LLMsTxt, APIsJSON or OpenAPI pointer is emitted from this probe, and none
+  should ever be emitted from it in a later round.
+
+host_status:
+  host: accelusinc.com
+  controlled_by_provider: true
+  disposition: suspended
+  registrar: GoDaddy.com, LLC
+  domain_created: '2021-06-09'
+  domain_expires: '2027-06-09'
+  a_record: 162.217.150.80
+  server: LiteSpeed (cPanel)
+  tls_certificate:
+    issuer: "C=US, O=Let's Encrypt, CN=R13"
+    subject: CN=www.accelusinc.com
+    not_before: '2026-02-12'
+    not_after: '2026-05-13'
+    expired: true
+  note: >-
+    HTTP 301s to HTTPS; HTTPS 302s every path to /cgi-sys/suspendedpage.cgi (HTTP 200,
+    text/html, "Account Suspended"). No subdomain of accelusinc.com resolves
+    (api, developer, docs, portal, app, my, status all NXDOMAIN).
+
+hit_count: 0
+soft_404_control:
+  path: /.well-known/accelus-negative-control-7f3ab91c.json
+  status: 302
+  document: false
+  note: >-
+    Negative control returns the same 302-to-suspended-page as every other path, which
+    confirms the host is a blanket catch-all. path_echo_control not applicable — no
+    document body of any kind is served.
+
+hosts:
+- host: https://accelusinc.com
+  documents:
+  - {path: /.well-known/security.txt, status: 302, file: null}
+  - {path: /.well-known/openid-configuration, status: 302, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 302, file: null}
+  - {path: /.well-known/oauth-protected-resource, status: 302, file: null}
+  - {path: /.well-known/api-catalog, status: 302, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 302, file: null}
+  - {path: /.well-known/aauth-resource.json, status: 302, file: null}
+  - {path: /.well-known/apis.json, status: 302, file: null}
+  - {path: /apis.json, status: 302, file: null}
+  - {path: /apis.yml, status: 302, file: null}
+  - {path: /.well-known/agent-card.json, status: 302, file: null}
+  - {path: /.well-known/agent.json, status: 302, file: null}
+  - {path: /openapi.json, status: 302, file: null}
+  - {path: /swagger.json, status: 302, file: null}
+  - {path: /api-docs, status: 302, file: null}
+- host: https://www.accelusinc.com
+  documents:
+  - {path: /.well-known/security.txt, status: 302, file: null}
+  - {path: /.well-known/openid-configuration, status: 302, file: null}
+  - {path: /.well-known/oauth-authorization-server, status: 302, file: null}
+  - {path: /.well-known/oauth-protected-resource, status: 302, file: null}
+  - {path: /.well-known/api-catalog, status: 302, file: null}
+  - {path: /.well-known/ai-plugin.json, status: 302, file: null}
+  - {path: /.well-known/aauth-resource.json, status: 302, file: null}
+  - {path: /.well-known/apis.json, status: 302, file: null}
+  - {path: /apis.json, status: 302, file: null}
+  - {path: /apis.yml, status: 302, file: null}
+  - {path: /.well-known/agent-card.json, status: 302, file: null}
+  - {path: /.well-known/agent.json, status: 302, file: null}
+  - {path: /openapi.json, status: 302, file: null}
+  - {path: /swagger.json, status: 302, file: null}
+  - {path: /api-docs, status: 302, file: null}
+
+contract_discovery:
+  openapi: none
+  graphql: none
+  mcp: none
+  a2a_agent_card: none
+  asyncapi: none
+  wsdl: none
+  grpc: none
+  ogc: none
+  note: >-
+    STEP 0b was run against every host the record knows. accelusinc.com and
+    www.accelusinc.com are the only hosts that exist; no api/developer/docs/portal
+    subdomain resolves, and there is no baseURL or OpenAPI servers[] host on record.
+    The Internet Archive holds no /api, /developer, /docs, /openapi.json or /swagger
+    path for accelusinc.com at any point in the site's life — the only machine-readable
+    surface ever archived is WordPress's stock /wp-json/oembed route on the marketing
+    site, which is CMS infrastructure and not a product API.
+  archive_evidence:
+  - {url: 'http://web.archive.org/cdx/search/cdx?url=accelusinc.com/api*', status: 200, result: 'no captures'}
+  - {url: 'http://web.archive.org/cdx/search/cdx?url=accelusinc.com/developer*', status: 200, result: 'no captures'}
+  - {url: 'http://web.archive.org/cdx/search/cdx?url=accelusinc.com/docs*', status: 200, result: 'no captures'}
+  - {url: 'http://web.archive.org/cdx/search/cdx?url=accelusinc.com/openapi.json*', status: 200, result: 'no captures'}
+  - {url: 'http://web.archive.org/cdx/search/cdx?url=accelusinc.com/swagger*', status: 200, result: 'no captures'}
+  - {url: 'http://web.archive.org/cdx/search/cdx?url=accelusinc.com/wp-json*', status: 200, result: 'WordPress stock /wp-json/oembed/1.0 route only'}
+
+github:
+  org: https://github.com/Accelus
+  status: 200
+  belongs_to_provider: false
+  note: >-
+    The github.com/Accelus organization was created 2013-10-26 — eight years before
+    Accelus Inc. was formed in 2021 — has zero public repositories and no name, blog,
+    company or description set. It is not evidence of this company's engineering surface
+    and no GitHubOrganization pointer is emitted for it.
